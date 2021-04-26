@@ -1,0 +1,150 @@
+//
+//  ContentView.swift
+//  Formulir
+//
+//  Created by Rayhan Hidayat on 28/01/21.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        NavigationView{
+            Form{
+                Section(){
+                    NavigationLink(destination: About()){
+                        HStack{
+                            Image("hai")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .clipShape(Circle())
+                            
+                            VStack(alignment: .leading){
+                                Text("Rayhan").font(.headline)
+                                Text("android").font(.caption)
+                                
+                                
+                            }
+                        }}
+                        
+                        .padding(.top,10)
+                        .padding(.bottom,10)
+                }
+                Section(header: Text("Pengaturan Umum")){
+                    
+                    NavigationLink(destination: About()){
+                        HStack{
+                            Image(systemName: "star.fill")
+                                .frame(width: 35, height: 35)
+                                .background(Color .orange)
+                                .cornerRadius(10)
+                                .foregroundColor(.white)
+                            Text("Starred Messages")
+                            
+                        }}
+                    
+                    NavigationLink(destination: About()){
+                        HStack{
+                            
+                            Image(systemName: "laptopcomputer")
+                                .frame(width: 35, height: 35)
+                                .background(Color .yellow)
+                                .cornerRadius(10)
+                                .foregroundColor(.white)
+                            Text("Whatsapp Web")
+                        }
+                        
+                    }}
+                
+                
+                Section(header: Text("Pengaturan Lanjutan")){
+                    
+                    NavigationLink(destination: About()){
+                        HStack(spacing:20){
+                            Image(systemName:"key.fill")
+                                .frame(width: 35, height: 35)
+                                .background(Color .blue)
+                                .cornerRadius(10)
+                                .foregroundColor(.white)
+                            Text("Account")
+                            
+                        }}
+                    
+                    NavigationLink(destination: About()){
+                        HStack(spacing:20){
+                            Image(systemName: "phone.circle")
+                                .frame(width: 35, height: 35)
+                                .background(Color .green)
+                                .cornerRadius(10)
+                                .foregroundColor(.white)
+                            Text("Chat")
+                            
+                        }}
+                    
+                    NavigationLink(destination: About()){
+                        HStack(spacing:20){
+                            Image(systemName: "iphone.radiowaves.left.and.right")
+                                .frame(width: 35, height: 35)
+                                .background(Color .red)
+                                .cornerRadius(10)
+                                .foregroundColor(.white)
+                            Text("Notification")
+                            
+                        }}
+                    
+                    NavigationLink(destination: About()){
+                        HStack(spacing:20){
+                            Image(systemName: "arrow.up.arrow.down")
+                                .frame(width: 35, height: 35)
+                                .background(Color .green)
+                                .cornerRadius(10)
+                                .foregroundColor(.white)
+                            Text("Data and Storage Usage")
+                            
+                        }
+                    }}
+                Section(header: Text("About")){
+                    NavigationLink(destination: About()){
+                        
+                        HStack{
+                            Image(systemName: "info")
+                                .frame(width: 35, height: 35)
+                                .background(Color .blue)
+                                .cornerRadius(10)
+                                .foregroundColor(.white)
+                            Text("Starred Messages")
+                            
+                        }}
+                    NavigationLink(destination: About()){
+                        HStack{
+                            
+                            Image(systemName: "heart")
+                                .frame(width: 35, height: 35)
+                                .background(Color .red)
+                                .cornerRadius(10)
+                                .foregroundColor(.white)
+                            Text("Tell A Freind")
+                        }
+                        
+                    }}
+                
+                
+            }
+            .navigationBarTitle("Setting")
+            
+        }
+        
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+    
+}
+struct About:View {
+    var body: some View{
+        Text("Ini adalah halaman about")
+    }
+}
